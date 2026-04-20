@@ -4,7 +4,7 @@ package com.noxcrew.sheeplib.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.noxcrew.sheeplib.AbstractWidgetExt;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractWidget;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -39,7 +39,7 @@ public class AbstractWidgetMixin implements AbstractWidgetExt {
             target = "Lnet/minecraft/client/gui/GuiGraphics;containsPointInScissor(II)Z"
         )
     )
-    public boolean render(GuiGraphics instance, int i, int j, Operation<Boolean> original) {
+    public boolean render(GuiGraphicsExtractor instance, int i, int j, Operation<Boolean> original) {
         return sheeplib$hoverable ? original.call(instance, i, j) : false;
     }
 }
