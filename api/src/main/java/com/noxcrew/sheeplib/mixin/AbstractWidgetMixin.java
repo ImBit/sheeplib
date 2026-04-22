@@ -33,11 +33,11 @@ public class AbstractWidgetMixin implements AbstractWidgetExt {
      * Wraps requests if an element is being hovered to always be false if not hoverable.
      */
     @WrapOperation(
-        method = "render",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/client/gui/GuiGraphics;containsPointInScissor(II)Z"
-        )
+            method = "extractRenderState",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;containsPointInScissor(II)Z"
+            )
     )
     public boolean render(GuiGraphicsExtractor instance, int i, int j, Operation<Boolean> original) {
         return sheeplib$hoverable ? original.call(instance, i, j) : false;

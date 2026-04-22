@@ -23,12 +23,12 @@ public class GuiMixin {
     private Minecraft minecraft;
 
     @Inject(
-            method = "extractWidgetRenderState",
+            method = "extractRenderState",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/Gui;renderTabList(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V"
+                    target = "Lnet/minecraft/client/gui/Gui;extractTabList(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/client/DeltaTracker;)V"
             ))
-    public void extractWidgetRenderState(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+    public void extractRenderState(GuiGraphicsExtractor graphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         // Only render when not in a chat screen, otherwise chat is rendered over the top of dialogs.
         if (!(this.minecraft.screen instanceof ChatScreen)) {
             DialogContainer.INSTANCE.extractRenderState(graphics, 0, 0, deltaTracker.getGameTimeDeltaTicks());
