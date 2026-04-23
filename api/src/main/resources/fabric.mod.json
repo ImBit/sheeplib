@@ -31,6 +31,16 @@
       "net/minecraft/client/gui/GuiGraphics": [
         "com/noxcrew/sheeplib/GuiGraphicsExt"
       ]
+    },
+    "custom": {
+      "modmenu": {
+        "badges": [
+          "library"
+        ],
+        "links": {
+          "modmenu.discord": "https://discord.gg/mcc"
+        }
+      }
     }
   },
   "depends": {
