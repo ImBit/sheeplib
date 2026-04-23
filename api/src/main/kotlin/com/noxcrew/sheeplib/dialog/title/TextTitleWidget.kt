@@ -68,7 +68,7 @@ public class TextTitleWidget(
     override fun extractWidgetRenderState(graphics: GuiGraphicsExtractor, i: Int, j: Int, f: Float) {
 //        graphics.fill(x, y + height, x + getWidth(), y + height + 1, theme.colors.border)
         graphics.horizontalLine(x, x + getWidth() - 1, y + height, theme.colors.border)
-        super.extractRenderState(graphics, i, j, f)
+        super.extractWidgetRenderState(graphics, i, j, f)
     }
 
     override fun onDialogResize() {
