@@ -1,13 +1,7 @@
 package com.noxcrew.sheeplib.coroutines
 
 import com.noxcrew.sheeplib.dialog.Dialog
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.CoroutineName
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancel
+import kotlinx.coroutines.*
 import net.minecraft.ChatFormatting
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
@@ -30,7 +24,7 @@ public abstract class CoroutineScopeDialog(
                 CoroutineName("$this") +
                 dispatcher +
                 CoroutineExceptionHandler { _, ex ->
-                    Minecraft.getInstance().gui.chat.addMessage(
+                    Minecraft.getInstance().gui.chat.addClientSystemMessage(
                         Component.translatable("sheeplib.error.coroutine").withStyle { it.withColor(ChatFormatting.RED) }
                     )
                     LoggerFactory.getLogger("SheepLib").error("Exception caught in dialog coroutine scope (${this::class.jvmName}):\n" + ex.stackTraceToString())
