@@ -39,7 +39,7 @@ public class AbstractWidgetMixin implements AbstractWidgetExt {
                     target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;containsPointInScissor(II)Z"
             )
     )
-    public boolean render(GuiGraphicsExtractor instance, int i, int j, Operation<Boolean> original) {
-        return sheeplib$hoverable ? original.call(instance, i, j) : false;
+    public boolean render(GuiGraphicsExtractor instance, int x, int y, Operation<Boolean> original) {
+        return sheeplib$hoverable ? original.call(instance, x, y) : false;
     }
 }

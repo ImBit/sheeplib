@@ -242,10 +242,10 @@ public abstract class Dialog(
             // most common so worth overriding.
             val override = (graphics as GuiGraphicsExt).`sheeplib$getTextOpacityOverride`()
             (graphics as GuiGraphicsExt).`sheeplib$setTextOpacityOverride`(POPUP_FOCUSED_OPACITY)
-            super.extractRenderState(graphics, i, j, f)
+            super.extractWidgetRenderState(graphics, i, j, f)
             (graphics as GuiGraphicsExt).`sheeplib$setTextOpacityOverride`(override)
         } else {
-            super.extractRenderState(graphics, i, j, f)
+            super.extractWidgetRenderState(graphics, i, j, f)
         }
 
         popup?.extractRenderState(graphics, i, j, f)
