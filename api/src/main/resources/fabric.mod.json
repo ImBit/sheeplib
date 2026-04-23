@@ -35,13 +35,5 @@
   },
   "depends": {
     "fabric-language-kotlin": ">=1.12.0+kotlin.2.0.10"
-  },
-  "custom": {
-    "modmenu": {
-      "badges": [ "library" ],
-      "links": {
-        "modmenu.discord": "https://discord.gg/mcc"
-      }
-    }
   }
 }

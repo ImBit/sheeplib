@@ -89,7 +89,8 @@ public open class ThemedButton(
             else -> graphics.text(minecraft.font, message, x + theme.dimensions.paddingInner, y, color)
         }
 
-        if (isHovered && isActive) graphics.componentHoverEffect(minecraft.font, message.style, i, j)
+        // TODO - accesswidener
+//        if (isHovered && isActive) graphics.componentHoverEffect(minecraft.font, message.style, i, j)
     }
 
     /**
