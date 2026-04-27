@@ -20,9 +20,7 @@ import net.minecraft.network.chat.TextColor
 
 public class StringsDialog(x: Int, y: Int) : Dialog(x, y), Themed by Theme.Active {
 
-    override val title: DialogTitleWidget by lazy {
-        TextTitleWidget(this, literal("Strings"))
-    }
+    override val title: DialogTitleWidget = TextTitleWidget(this, literal("Strings"))
 
     override fun layout(): Layout = linear(LinearLayout.Orientation.VERTICAL) {
         +TextWidgets.singleLine(literal("Simple string"), maxWidth = 100)
