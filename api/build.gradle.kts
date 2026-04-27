@@ -11,7 +11,7 @@ plugins {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/sheeplib.accessWidener")
+    accessWidenerPath = file("src/main/resources/sheeplib.classTweaker")
 }
 
 buildscript {

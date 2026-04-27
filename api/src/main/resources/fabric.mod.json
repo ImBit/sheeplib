@@ -22,7 +22,7 @@
   ],
   "mixins": [ "sheeplib.mixins.json" ],
   "environment": "client",
-  "accessWidener": "sheeplib.accessWidener",
+  "accessWidener": "sheeplib.classTweaker",
   "custom": {
     "loom:injected_interfaces": {
       "net/minecraft/client/gui/components/AbstractWidget": [
